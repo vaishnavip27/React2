@@ -1,13 +1,6 @@
-import { MouseEvent } from "react";
-
 export default function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  let selectedIndex = 0;
-
-  //Event handler for click event
-  const handleCLick = (e: MouseEvent) => {
-    console.log(e);
-  };
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
@@ -23,7 +16,7 @@ export default function ListGroup() {
           <li
             className="list-group-item active"
             key={item}
-            onClick={handleCLick}
+            onClick={setSelectedIndex(index)}
           >
             {item}
           </li>
